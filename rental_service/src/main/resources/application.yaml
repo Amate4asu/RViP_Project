@@ -1,3 +1,25 @@
 spring:
   application:
     name: rental_service
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5434/rental_db}
+    username: ${SPRING_DATASOURCE_USERNAME:rental_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:rental_password}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

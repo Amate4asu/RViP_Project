@@ -30,3 +30,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs ###
+*.log
+
+### ENV ###
+.env
+.env.*
+!.env.example
+
+.DS_Store
+Thumbs.db
+
